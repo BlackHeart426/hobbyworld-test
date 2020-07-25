@@ -1,0 +1,166 @@
+.news-block {
+  padding: 20px;
+  margin: 20px 40px;
+  border: solid #f8f9fa;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+
+  &__title {
+    top: -15px;
+    background: #f3f3f3;
+    border-radius: 5px;
+    padding: 2px 5px;
+    position: absolute;
+  }
+
+  &__info {
+    padding-left: 10px;
+    width: 50%;
+  }
+
+  &__info-top {
+    display: flex;
+  }
+
+  &__date {
+    color: #b1b1b1;
+    width: 50%;
+  }
+
+  &__image {
+    width: 30%;
+    height: auto;
+    display: flex;
+  }
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &__category {
+    color: #b1b1b1;
+    width: 50%;
+  }
+
+  &__description {
+    display: flex;
+  }
+
+  &__button {
+    text-align: right;
+    width: 20%;
+  }
+}
+
+
+/* Large */
+@media screen and (max-width: 1200px){
+  .news-block {
+    padding: 20px;
+    margin: 20px 40px;
+    border: solid #f8f9fa;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+  }
+}
+
+@media screen and (max-width: 1199px){
+
+}
+
+/* Medium */
+@media screen and (max-width: 992px){
+
+}
+
+@media screen and (max-width: 991px){
+
+}
+
+/* Tablet */
+@media screen and (max-width: 768px){
+  .news-block {
+    border: solid #f8f9fa;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+  }
+}
+
+@media screen and (max-width: 767px){
+
+}
+
+/* Phone */
+@media screen and (max-width: 480px){
+  .news-block {
+    border: solid #f8f9fa;
+    margin: 20px 0;
+    padding-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+
+    &__image {
+      margin-top: 40px;
+      width: 100%;
+      display: flex;
+    }
+
+    &__title {
+      top: -15px;
+      width: 88%;
+      background: #f3f3f3;
+      border-radius: 5px;
+      padding: 2px 5px;
+      position: absolute;
+    }
+
+    &__button {
+      width: 100%;
+    }
+
+    &__info-top {
+      display: block;
+
+    }
+
+    &__info {
+      padding: 0;
+
+    }
+
+    &__date {
+      width: 100%;
+    }
+
+    &__category {
+      width: 100%;
+    }
+
+    &__description {
+      width: 100%;
+      display: flex;
+    }
+
+    &__category {
+      width: 100%;
+      display: flex;
+    }
+
+    &__info {
+      width: 100%;
+    }
+
+    &__button {
+      text-align: center;
+      padding: 10px;
+    }
+  }
+}
+
+@media screen and (max-width: 479px){
+
+}

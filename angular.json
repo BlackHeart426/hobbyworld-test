@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "hobbyworld-test"
+    }
+  },
+  "defaultProject": "hobbyworld-test",
+  "cli": {
+    "analytics": "2a74829b-af9b-4348-ab91-f708d7bfb739"
+  }
 }
