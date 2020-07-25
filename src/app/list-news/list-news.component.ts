@@ -23,7 +23,7 @@ export class ListNewsComponent implements OnInit {
   //     });
   //   });
     this.newsService.getAll().subscribe((data) => {
-      console.log('test');
+      console.log('test123');
       this.parseXML(data)
         .then((data) => {
           console.log(data);
