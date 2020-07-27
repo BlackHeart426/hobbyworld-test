@@ -1,5 +1,9 @@
-<div class="content__items">
-  <app-news></app-news>
-  <app-news></app-news>
+<div class="content__items" *ngIf="listNews.length; else loading">
+  <div *ngFor="let news of listNews">
+    <app-news [news]="news"></app-news>
+  </div>
 </div>
 
+<ng-template #loading>
+  Loading...
+</ng-template>

@@ -1,0 +1,14 @@
+.edit-news {
+  width: calc(100vw - 500px);
+  height: 100%;
+  background-color: #fff;
+  margin: 0 auto;
+  max-width: 1400px;
+
+  &__actions {
+    justify-content: space-between;
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+  }
+}

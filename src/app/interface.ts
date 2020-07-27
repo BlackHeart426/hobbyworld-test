@@ -1,9 +1,9 @@
 export interface News {
-  guit: string;
+  id: string;
   title: string;
   link: string;
   description: string;
   pubDate: string;
-  enclosure: string;
   category: string;
+  image: string;
 }

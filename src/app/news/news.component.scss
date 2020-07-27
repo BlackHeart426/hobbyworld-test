@@ -48,7 +48,10 @@
   }
 
   &__button {
-    text-align: right;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-between;
     width: 20%;
   }
 }
@@ -155,6 +158,10 @@
     }
 
     &__button {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      justify-content: space-between;
       text-align: center;
       padding: 10px;
     }

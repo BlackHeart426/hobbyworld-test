@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
-import { AngularEditorConfig } from '@kolkov/angular-editor';
+import {News} from '../interface';
+import {AngularEditorConfig} from '@kolkov/angular-editor';
 
 @Component({
   selector: 'app-news',
@@ -8,38 +9,16 @@ import { AngularEditorConfig } from '@kolkov/angular-editor';
   styleUrls: ['./news.component.scss']
 })
 export class NewsComponent implements OnInit {
-  htmlContent: any = ' На Украине расстреляли бизнесмена Игоря Плекана на глазах у его семилетнего сына. Плекан вместе с ребенком ехал\n' +
-    '      на дачу в Киевской области. Недалеко от железнодорожного переезда из кустов выскочили неизвестные и начали в упор\n' +
-    '      расстреливать машину из автоматов. В бизнесмена попали минимум четыре пули';
-  config: AngularEditorConfig = {
-    editable: true,
-    spellcheck: true,
-    height: '10rem',
-    minHeight: '5rem',
-    placeholder: 'Enter text here...',
-    translate: 'no',
-    defaultParagraphSeparator: 'p',
-    defaultFontName: 'Arial',
-    toolbarHiddenButtons: [
-      ['bold']
-    ],
-    customClasses: [
-      {
-        name: 'quote',
-        class: 'quote',
-      },
-      {
-        name: 'redText',
-        class: 'redText'
-      },
-      {
-        name: 'titleText',
-        class: 'titleText',
-        tag: 'h1',
-      },
-    ]
-  };
 
+  @Input() news: News;
+  htmlContent = '';
+  config: AngularEditorConfig = {
+    editable: false,
+    showToolbar: false,
+    maxHeight: '170px',
+    minHeight: '170px',
+    outline: false
+  };
   constructor(
     private router: Router
   ) { }
@@ -47,7 +26,12 @@ export class NewsComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onOpenNews(): void {
-    this.router.navigate(['/news', '123']);
+  onOpenNews(id): void {
+    // this.router.navigate(['/news', id]);
+  }
+
+  onEditNews(id): void {
+    console.log(id);
+    this.router.navigate(['/edit-news', id]);
   }
 }

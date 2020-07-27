@@ -1,25 +1,31 @@
 <div class="news-block">
   <div class="news-block__title">
-    На Украине бизнесмена расстреляли на глазах у семилетнего сына
+    {{news.title}}
   </div>
   <div class="news-block__image">
-    <img  src="https://icdn.lenta.ru/images/2020/07/24/12/20200724124919548/pic_f61df94e600039d58532b4769982bf9a.png" alt="">
+    <img  src="{{news.image}}" alt="">
   </div>
   <div class="news-block__info">
     <div class="news-block__info-top">
       <div class="news-block__date">
-        Fri, 24 Jul 2020 12:44:33 +0300
+        {{news.pubDate | date:'short' }}
       </div>
       <div class="news-block__category">
-        Бывший СССР
+        {{news.category}}
       </div>
     </div>
     <div class="news-block__description">
-      <angular-editor [(ngModel)]="htmlContent" [config]="config">654</angular-editor>
+
+      <angular-editor  [(ngModel)]="news.description" [config]="config" > </angular-editor>
     </div>
   </div>
 
   <div class="news-block__button">
-    <button type="button" class="btn btn-primary" (click)="onOpenNews()">Читать полностью</button>
+    <div>
+      <button type="button" class="btn btn-secondary" (click)="onEditNews(news.id)">Редактировать</button>
+    </div>
+    <div>
+      <button type="button" class="btn btn-primary" (click)="onOpenNews(news.id)">Читать полностью</button>
+    </div>
   </div>
 </div>

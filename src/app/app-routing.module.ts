@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import {NewsComponent} from './news/news.component';
 import {ListNewsComponent} from './list-news/list-news.component';
 import {MainLayoutComponent} from './main-layout/main-layout.component';
+import {EditNewsComponent} from './edit-news/edit-news.component';
 
 const routes: Routes = [
   {
@@ -11,7 +12,10 @@ const routes: Routes = [
         path: '', redirectTo: '/list-news', pathMatch: 'full'
       },
       {
-        path: 'news/:uuid', component: NewsComponent
+        path: 'news/:id', component: NewsComponent
+      },
+      {
+        path: 'edit-news/:id', component: EditNewsComponent
       },
       {
         path: 'list-news', component: ListNewsComponent

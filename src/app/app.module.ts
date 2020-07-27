@@ -9,8 +9,9 @@ import { ContainerDescriptionComponent } from './components/container-descriptio
 import { MainLayoutComponent } from './main-layout/main-layout.component';
 import { MenuToolbarComponent } from './components/menu-toolbar/menu-toolbar.component';
 import { AngularEditorModule } from '@kolkov/angular-editor';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import {EditNewsComponent} from './edit-news/edit-news.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import {HttpClientModule} from '@angular/common/http';
     ListNewsComponent,
     ContainerDescriptionComponent,
     MainLayoutComponent,
+    EditNewsComponent,
     MenuToolbarComponent
   ],
   imports: [
@@ -26,7 +28,8 @@ import {HttpClientModule} from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     AngularEditorModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
