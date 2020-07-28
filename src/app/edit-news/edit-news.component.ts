@@ -68,7 +68,6 @@ export class EditNewsComponent implements OnInit {
         })
       ).subscribe(
       (news: News) => {
-        this.loading = false
         this.news = news;
         this.form.patchValue(
           {
@@ -77,6 +76,7 @@ export class EditNewsComponent implements OnInit {
           }
         );
         this.form.enable();
+        this.loading = false;
       }
     );
   }

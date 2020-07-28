@@ -1,6 +1,6 @@
 <div class="edit-news">
   <h3>Редактировать новость</h3>
-  <div *ngIf="loading; else loading">
+  <div *ngIf="!loading; else loadingForm">
     <form [formGroup]="form" (ngSubmit)="onSubmit()">
       <div class="input-group mb-3">
         <input
@@ -47,6 +47,10 @@
 
 </div>
 
-<ng-template #loading>
-  Loading...
+<ng-template #loadingForm>
+  <div class="d-flex justify-content-center">
+    <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
 </ng-template>
