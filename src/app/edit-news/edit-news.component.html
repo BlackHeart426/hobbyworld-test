@@ -1,45 +1,52 @@
 <div class="edit-news">
-  <h3>Редиактировать новость</h3>
-  <form [formGroup]="form" (ngSubmit)="onSubmit()">
-    <div class="input-group mb-3">
-      <input
-        formControlName="title"
-        [ngClass]="{'invalid': form.get('title').invalid && form.get('title').touched}"
-        type="text"
-        class="form-control"
-        placeholder="Title"
-        aria-label="Title"
-        aria-describedby="basic-addon1"
-      >
-      <span
-        class="helper-text red-text"
-        *ngIf="form.get('title').invalid && form.get('title').touched"
-      >
+  <h3>Редактировать новость</h3>
+  <div *ngIf="loading; else loading">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="input-group mb-3">
+        <input
+          formControlName="title"
+          [ngClass]="{'invalid': form.get('title').invalid && form.get('title').touched}"
+          type="text"
+          class="form-control"
+          placeholder="Title"
+          aria-label="Title"
+          aria-describedby="basic-addon1"
+        >
+        <span
+          class="helper-text red-text"
+          *ngIf="form.get('title').invalid && form.get('title').touched"
+        >
         <span *ngIf="form.get('title').errors['required']">
           Имя категории не может быть пустым.
         </span>
       </span>
-    </div>
-    <div class="input-group mb-3">
-      <angular-editor formControlName="description" [(ngModel)]="htmlContent" [config]="config"></angular-editor>
-    </div>
+      </div>
+      <div class="input-group mb-3">
+        <angular-editor formControlName="description" [(ngModel)]="htmlContent" [config]="config"></angular-editor>
+      </div>
 
-    <div class="edit-news__actions">
-      <button
-        type="button"
-        (click)="onMenu()"
-        class="btn btn-secondary"
-      >
-        Вернуться назад
-      </button>
-      <button
-        type="submit"
-        [disabled]="form.invalid || form.disabled"
-        class="btn btn-primary"
-      >
-        Сохранить изменения
-      </button>
-    </div>
-  </form>
+      <div class="edit-news__actions">
+        <button
+          type="button"
+          (click)="onMenu()"
+          class="btn btn-secondary"
+        >
+          Вернуться назад
+        </button>
+        <button
+          type="submit"
+          [disabled]="form.invalid || form.disabled"
+          class="btn btn-primary"
+        >
+          Сохранить изменения
+        </button>
+      </div>
+    </form>
+  </div>
+
 
 </div>
+
+<ng-template #loading>
+  Loading...
+</ng-template>

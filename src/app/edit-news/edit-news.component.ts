@@ -15,15 +15,13 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 export class EditNewsComponent implements OnInit {
   form: FormGroup;
   news: News;
-  htmlContent: any = ' На Украине расстреляли бизнесмена Игоря Плекана на глазах у его семилетнего сына. Плекан вместе с ребенком ехал\n' +
-    '      на дачу в Киевской области. Недалеко от железнодорожного переезда из кустов выскочили неизвестные и начали в упор\n' +
-    '      расстреливать машину из автоматов. В бизнесмена попали минимум четыре пули';
+  loading = true;
+  htmlContent: any = '';
   config: AngularEditorConfig = {
     editable: true,
     spellcheck: true,
     height: '10rem',
     minHeight: '5rem',
-    placeholder: 'Enter text here...',
     translate: 'no',
     defaultParagraphSeparator: 'p',
     defaultFontName: 'Arial',
@@ -63,13 +61,14 @@ export class EditNewsComponent implements OnInit {
     this.route.params
       .pipe(
         switchMap((params: Params) => {
-          if (params.id) {
-            return this.newsService.getById(params.id);
+          if (params.uuid) {
+            return this.newsService.getById(params.uuid);
           }
           return of(null);
         })
       ).subscribe(
       (news: News) => {
+        this.loading = false
         this.news = news;
         this.form.patchValue(
           {
@@ -92,7 +91,7 @@ export class EditNewsComponent implements OnInit {
       description: this.form.value.description
     };
 
-    this.newsService.update(this.news.id, news).subscribe(res => {
+    this.newsService.update(this.news.uuid, news).subscribe(res => {
       console.log('Данные сохранены');
     });
 

@@ -12,10 +12,10 @@ const routes: Routes = [
         path: '', redirectTo: '/list-news', pathMatch: 'full'
       },
       {
-        path: 'news/:id', component: NewsComponent
+        path: 'news/:uuid', component: NewsComponent
       },
       {
-        path: 'edit-news/:id', component: EditNewsComponent
+        path: 'edit-news/:uuid', component: EditNewsComponent
       },
       {
         path: 'list-news', component: ListNewsComponent

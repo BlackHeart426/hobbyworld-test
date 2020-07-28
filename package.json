@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "server": "json-server news.json",
+    "server": "json-server db.json",
     "heroku-postbuild": "ng build --prod"
   },
   "engines": {
