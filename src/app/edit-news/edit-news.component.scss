@@ -12,3 +12,77 @@
     justify-content: space-between;
   }
 }
+
+/* Large */
+@media screen and (max-width: 1200px){
+  .edit-news {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    margin: 0 auto;
+    max-width: 1400px;
+
+    &__actions {
+      justify-content: space-between;
+      display: flex;
+      text-align: center;
+      justify-content: space-between;
+    }
+  }
+}
+
+@media screen and (max-width: 1199px){
+
+}
+
+/* Medium */
+@media screen and (max-width: 992px){
+
+}
+
+@media screen and (max-width: 991px){
+
+}
+
+/* Tablet */
+@media screen and (max-width: 768px){
+  .edit-news {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    margin: 0 auto;
+    max-width: 1400px;
+
+    &__actions {
+      justify-content: space-between;
+      display: flex;
+      text-align: center;
+      justify-content: space-between;
+    }
+  }
+}
+
+@media screen and (max-width: 767px){
+
+}
+
+/* Phone */
+@media screen and (max-width: 480px){
+  .edit-news {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    margin: 0 auto;
+
+    &__actions {
+      justify-content: space-between;
+      display: flex;
+      text-align: center;
+      justify-content: space-between;
+    }
+  }
+}
+
+@media screen and (max-width: 479px){
+
+}
