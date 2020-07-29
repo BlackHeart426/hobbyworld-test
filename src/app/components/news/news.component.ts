@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
-import {News} from '../interface';
+import {News} from '../../interface';
 import {AngularEditorConfig} from '@kolkov/angular-editor';
 
 @Component({
@@ -27,11 +27,10 @@ export class NewsComponent implements OnInit {
   }
 
   onOpenNews(id): void {
-    // this.router.navigate(['/news', id]);
+    this.router.navigate(['/news', id]);
   }
 
   onEditNews(id): void {
-    console.log(id);
     this.router.navigate(['/edit-news', id]);
   }
 }

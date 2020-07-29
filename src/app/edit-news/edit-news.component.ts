@@ -95,7 +95,6 @@ export class EditNewsComponent implements OnInit {
     };
 
     this.newsService.update(this.news.uuid, news).subscribe(res => {
-      console.log('Данные сохранены');
       this.toastService.show('Данные сохранены', {
         classname: 'bg-success text-light',
         delay: 2000 ,

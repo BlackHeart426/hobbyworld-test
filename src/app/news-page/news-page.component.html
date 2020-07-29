@@ -1,0 +1,46 @@
+<div *ngIf="!loading; else loadingForm">
+  <div class="news-block">
+    <div class="news-block__title">
+      <h3>{{news.title}}</h3>
+    </div>
+    <div class="news-block__image">
+      <img  src="{{news.image}}" alt="" style="width: 100%">
+    </div>
+    <div class="news-block__info">
+      <div class="news-block__info-top">
+        <div class="news-block__date">
+          {{news.pubDate | date:'short' }}
+        </div>
+        <div class="news-block__category">
+          {{news.category}}
+        </div>
+      </div>
+      <div class="news-block__description">
+
+        <angular-editor  [(ngModel)]="news.description" [config]="config" > </angular-editor>
+      </div>
+    </div>
+
+    <div class="news-block__button">
+      <div class="news-block__button-edit">
+        <button
+          type="button"
+          style="margin-top: 10px"
+          (click)="onMenu()"
+          class="btn btn-secondary"
+        >
+          Вернуться назад
+        </button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<ng-template #loadingForm>
+  <div class="d-flex justify-content-center">
+    <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+</ng-template>
