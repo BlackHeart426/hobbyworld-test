@@ -6,6 +6,7 @@ import {NewsService} from '../services/news.service';
 import {switchMap} from 'rxjs/operators';
 import {of} from 'rxjs';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {ToastService} from '../services/toast.service';
 
 @Component({
   selector: 'app-edit-news',
@@ -48,7 +49,8 @@ export class EditNewsComponent implements OnInit {
   constructor(
     private newsService: NewsService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    public toastService: ToastService
   ) { }
 
   ngOnInit(): void {
@@ -69,6 +71,7 @@ export class EditNewsComponent implements OnInit {
       ).subscribe(
       (news: News) => {
         this.news = news;
+        this.htmlContent = news.description;
         this.form.patchValue(
           {
             title: news.title,
@@ -93,6 +96,12 @@ export class EditNewsComponent implements OnInit {
 
     this.newsService.update(this.news.uuid, news).subscribe(res => {
       console.log('Данные сохранены');
+      this.toastService.show('Данные сохранены', {
+        classname: 'bg-success text-light',
+        delay: 2000 ,
+        autohide: true,
+        headertext: 'Выполнено'
+      });
     });
 
   }

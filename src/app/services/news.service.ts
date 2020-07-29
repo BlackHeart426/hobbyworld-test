@@ -23,7 +23,7 @@ export class NewsService {
   }
 
   getById(uuid): Observable<News> {
-    return this._http.get<News>(`https://hobbyworld-35f1c.firebaseio.com/news//${uuid}.json`)
+    return this._http.get<News>(`https://hobbyworld-35f1c.firebaseio.com/news/${uuid}.json`)
       .pipe(
         map(items => {
           return {...items, uuid};
@@ -32,6 +32,6 @@ export class NewsService {
   }
 
   update(uuid, news): Observable<News> {
-    return this._http.patch<News>(`https://hobbyworld-35f1c.firebaseio.com/news//${uuid}.json`, news);
+    return this._http.patch<News>(`https://hobbyworld-35f1c.firebaseio.com/news/${uuid}.json`, news);
   }
 }

@@ -12,6 +12,8 @@ import { AngularEditorModule } from '@kolkov/angular-editor';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {EditNewsComponent} from './edit-news/edit-news.component';
+import { ToastComponent } from './components/toast/toast.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import {EditNewsComponent} from './edit-news/edit-news.component';
     ContainerDescriptionComponent,
     MainLayoutComponent,
     EditNewsComponent,
-    MenuToolbarComponent
+    MenuToolbarComponent,
+    ToastComponent
   ],
   imports: [
     HttpClientModule,
@@ -29,7 +32,8 @@ import {EditNewsComponent} from './edit-news/edit-news.component';
     AppRoutingModule,
     AngularEditorModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
